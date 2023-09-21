@@ -18,7 +18,7 @@ public class MoneyTransferTest {
         var authInfo = getAuthInfo();
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = getVerificationCode();
-        var dashboardPage = verificationPage.validVerify(verificationCode);
+        dashboardPage = verificationPage.validVerify(verificationCode);
     }
 
 
