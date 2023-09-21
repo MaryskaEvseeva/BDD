@@ -14,7 +14,7 @@ public class TransferPage {
     private final SelenideElement transferButton = $("[data-test-id='action-transfer']");
 
     private final SelenideElement amountInput = $("[data-test-id='amount'] input");
-    private final SelenideElement frontInput = $("[data-test-id='front'] input");
+    private final SelenideElement fromInput = $("[data-test-id='from'] input");
     private final SelenideElement transferHead = $(byText("Пополнение карты"));
 
     private final SelenideElement errorMessage = $("[data-test-id='error-message']");
@@ -30,7 +30,7 @@ public class TransferPage {
 
     public void makeTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
         amountInput.setValue(amountToTransfer);
-        frontInput.setValue(cardInfo.getCardNumber());
+        fromInput.setValue(cardInfo.getCardNumber());
         transferButton.click();
     }
 

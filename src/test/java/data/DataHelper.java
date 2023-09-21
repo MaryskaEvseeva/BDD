@@ -4,6 +4,8 @@ import lombok.Value;
 
 import java.util.Random;
 
+import static org.apache.commons.lang3.RandomUtils.nextInt;
+
 public class DataHelper {
     private DataHelper() {
     }
@@ -42,14 +44,15 @@ public class DataHelper {
         return new CardInfo("5559 0000 0000 0002", "0f3f5c2a-249e-4c3d-8287-09f7a039391d");
     }
 
-    public static int generateValidAmount(int balance) {
-        return new Random().nextInt(Math.abs(balance)) + 1;
-    }
 
+    public static int generateValidAmount (int balance) {
+        return new Random().nextInt(Math.abs(balance))+ 1;
+    }
     public static int generateInvalidAmount(int balance) {
-        return Math.abs(balance) + new Random().nextInt(10000);
-
+        return (Math.abs(balance) + new Random().nextInt(10000));
     }
+
+
 
     public static AuthInfo getOtherAuthInfo(AuthInfo original) {
         return new AuthInfo("petya", "123qwerty");
